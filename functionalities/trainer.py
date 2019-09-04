@@ -110,6 +110,7 @@ def train(num_epoch, net, criterion, optimizer, trainloader, validloader=None, t
                     optimizer.step()
             else:
                 rot_inputs, class_labels, rot_labels = rtt.create_rot_batch(inputs, labels, rot=rot)
+                print(rot_labels)
                 rot_inputs, rot_labels = rot_inputs.to(device), rot_labels.to(device)
                 optimizer.zero_grad()
                 outputs = net(rot_inputs)
