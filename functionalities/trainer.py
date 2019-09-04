@@ -92,6 +92,7 @@ def train(num_epoch, net, criterion, optimizer, trainloader, validloader=None, t
         running_loss = 0.0
         for i, data in enumerate(trainloader, 0):
             inputs, labels = data
+            print(labels)
             if rot is None:
                 inputs, labels = inputs.to(device), labels.to(device)
                 if classifier is None:
